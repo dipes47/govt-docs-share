@@ -1,0 +1,16 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Allow each authenticated user to manage their own files
+    // under /documents/<uid>/
+    match /documents/{userId}/{allPaths=**} {
+      allow read, write, delete: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Deny everything else
+    match /{path=**} {
+      allow read, write: if false;
+    }
+  }
+}
