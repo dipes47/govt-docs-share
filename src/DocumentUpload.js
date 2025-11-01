@@ -4,7 +4,6 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import log from "loglevel";
 
-
 const DocumentUpload = ({ user, aadhaar }) => {
   const [file, setFile] = useState(null);
   const [progress, setProgress] = useState(0);
