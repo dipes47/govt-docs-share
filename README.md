@@ -1,70 +1,122 @@
-# Getting Started with Create React App
+# 📄 Govt Docs Share
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application to upload, store, and access important government documents securely using Firebase Authentication, Firestore, and Firebase Storage.
 
-## Available Scripts
+# 📌 Overview
+Govt Docs Share is a lightweight, secure document-management system where users can:
 
-In the project directory, you can run:
+Upload important files (PDFs, IDs, certificates, etc.)
+Access uploaded documents anytime
+Manage personal profile details
+Login through phone OTP authentication
 
-### `npm start`
+Built using React.js on the frontend and Firebase on the backend.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 🚀 Features
+## 🔐 Authentication
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Phone number login
+OTP verification using Firebase Authentication
 
-### `npm test`
+## 📤 Document Upload
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Upload files directly to Firebase Storage
+Automatically store file metadata in Firestore
 
-### `npm run build`
+## 📚 Document Listing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+View all uploaded documents
+Fetch and display download links
+Dynamically rendered list from Firestore
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 👤 User Profile
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Manage and view logged-in user info
+Secure session handling
 
-### `npm run eject`
+## 🏗️ Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Frontend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+React.js (CRA)
+CSS (index.css)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Backend / Cloud
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Firebase Authentication (Phone Auth)
+Firestore Database
+Firebase Storage
 
-## Learn More
+### Tools & Config
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+firebase.json, firestore.rules, storage.rules
+npm for package management
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Project Sructure
+govt-docs-share/
+│── public/
+│── src/
+│   ├── App.js
+│   ├── DocumentList.js
+│   ├── DocumentUpload.js
+│   ├── PhoneAuth.js
+│   ├── Profile.js
+│   ├── firebase.js
+│   ├── index.js
+│   └── index.css
+│── firebase.json
+│── firestore.rules
+│── storage.rules
+│── package.json
+└── README.md
 
-### Code Splitting
+# 🔧 Installation & Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 1️⃣ Install dependencies
+```sh
+npm install
+```
+## 2️⃣ Start development server
+```sh
+npm start
+```
+## 3️⃣ Firebase Setup
+```js
+import { initializeApp } from "firebase/app";
 
-### Analyzing the Bundle Size
+const firebaseConfig = {
+  apiKey: "...",
+  authDomain: "...",
+  projectId: "...",
+  storageBucket: "...",
+  messagingSenderId: "...",
+  appId: "..."
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+const app = initializeApp(firebaseConfig);
+export default app;
+```
+## Usage Flow
 
-### Making a Progressive Web App
+Enter mobile number
+Receive OTP → Verify
+Upload documents
+View all uploaded files in the list
+Download or view via storage URL
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# 🔒 Firebase Security
+Authentication-based access control
+Firestore rules protect user-specific data
+Storage rules restrict file access
 
-### Advanced Configuration
+## 🛠️ Future Enhancements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Role-based admin dashboard
+Document sharing via link
+Categorization (Aadhaar, PAN, Certificates, etc.)
+File preview inside the app
+Dark mode UI
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# 👨‍💻 Author
+Dipesh Ghosh
+Solo Developer • Web Development • React & Firebase Projects
