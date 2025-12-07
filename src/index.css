@@ -12,6 +12,8 @@ code {
     monospace;
 }
 
+/* src/index.css */
+
 /* ===== Reset / base ===== */
 :root {
   --bg: #f7fafc;

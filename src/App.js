@@ -6,6 +6,7 @@ import DocumentList from "./DocumentList";
 import Profile from "./Profile";
 import log from "loglevel";
 import { auth } from "./firebase";
+import "./index.css";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
 log.setLevel("info");
