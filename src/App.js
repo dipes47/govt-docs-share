@@ -17,6 +17,7 @@ const isValidAadhaar = (val) => {
 };
 
 const App = () => {
+  i;
   const [user, setUser] = useState(null);
   const [aadhaar, setAadhaar] = useState("");
   const [loadingAuth, setLoadingAuth] = useState(true);
